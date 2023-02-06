@@ -32,10 +32,10 @@ validatorHandler(getProductSchema, 'params'), // valida el id
 validatorHandler(updateProductSchema, 'body'), // puedo usar tantos middlewares como quiera
 async (req, res, next) => {
   try {
-  const { productId } = req.params;
-  const body = req.body;
-  const product = await service.update(productId, body);
-  res.json(product);
+    const { productId } = req.params;
+    const body = req.body;
+    const product = await service.update(productId, body);
+    res.json(product);
   } catch (error) {
     next(error); // next es un método reservado para el uso de los middlewares, salió de la nada xd
   }
